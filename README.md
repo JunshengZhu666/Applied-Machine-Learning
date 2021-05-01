@@ -59,61 +59,67 @@ Course Content
 
 Lec1: Introduction
 
-  Basic Algebra and Probability
-  
-  • http://www.cs.mcgill.ca/~dprecup/courses/ML/Materials/prob-review.pdf
-  • http://www.cs.mcgill.ca/~dprecup/courses/ML/Materials/linalg-review.pdf
+    Basic Algebra and Probability
+
+    • http://www.cs.mcgill.ca/~dprecup/courses/ML/Materials/prob-review.pdf
+    • http://www.cs.mcgill.ca/~dprecup/courses/ML/Materials/linalg-review.pdf
 
 Lec2: Linear regression
 
-  Least Square Solutions and Gradient Descent method
+    Least Square Solutions and Gradient Descent method
 
 Lec3: Linear regression
 
-  Regressio Expansion; Overfitting and Cross-validation
+    Regressio Expansion; Overfitting and Cross-validation
 
 Lec4: Linear classification
 
-  Discrimnative Learning (Logistic Regression) 
+    Discrimnative Learning (Logistic Regression) 
 
 Lec5: Linear classification
 
-  Generation Learning (LDA: Same Cov & QDA: Diff Cov)
-  
-  Naive Bayes - Text classification example - Laplace smoothing(Unobserved word)
-  
-  Gaussian Naive Bayes: Diagonal Cov
+    Generation Learning (LDA: Same Cov & QDA: Diff Cov)
+
+    Naive Bayes - Text classification example - Laplace smoothing(Unobserved word)
+
+    Gaussian Naive Bayes: Diagonal Cov
 
 Lec6: Performance analysis and error estimation
 
-  Sensitivity&Specificity - Accurary - Precision&Recall 
-  
-  K-CV - ROC - AUC
-  
-  Baseline Comparsion of Classification and Regression Problems
+    Sensitivity&Specificity - Accurary - Precision&Recall 
+
+    K-CV - ROC - AUC
+
+    Baseline Comparsion of Classification and Regression Problems
 
 Lec7: Decision trees
 
-  Recursive Learning 
-  
-  Entropy - Conditional Entropy - Information Gain
-  
-  Pros & Cons
+    Recursive Learning 
+
+    Entropy - Conditional Entropy - Information Gain
+
+    Pros & Cons
 
 Lec8: Instance-based learning
 
-  Parametric Supervised Learning v.s. Instance-based Learning 
-  
-  Distance metric scalering - Domain Specific Weighting Functions 
-  
-  Pros & Cons and Application of Lazy Learning 
-  
-  Project2
+    Parametric Supervised Learning v.s. Instance-based Learning 
 
-Lec9: Feature construction and selection
+    Distance metric scalering - Domain Specific Weighting Functions 
 
-  
+    Pros & Cons and Application of Lazy Learning 
 
+    Project2
+
+Lec9: Feature construction and selection (NLP)
+
+    Natural Language toolkit: http://www.nltk.org/
+    
+    Words (Binary - Absolute frequency - Relative frequency -Stopwords - Lemmatization - TF*IDF - N-grams)
+    
+    Word2Vec (Bag-of-words; Skip-gram) 
+
+    (Wrapper methods: PCA) (Embedded methods: Lasso & Ridge) (Variable Ranking: Sorcing Functions) 
+    
 Lec10: Ensemble methods
 
 Lec11: Support vector machines
