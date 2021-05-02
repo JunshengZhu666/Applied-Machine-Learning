@@ -122,9 +122,33 @@ Lec9: Feature construction and selection (NLP)
     
 Lec10: Ensemble methods
 
+    Ensemble the results of learners with slightly 
+    
+    different datasets(Bagging[Var-]) or 
+    
+    different training procedure(Random Forests[Var-], Extremely randomized Trees[Bias-])
+    
+    Boosting[Bias-] (More weight on weak learners) - AdaBoost (auto-adapt error rate) 
+
 Lec11: Support vector machines
 
-Lec12: Support vector machines
+    Linear Classifier - Perceptron - Dual Representation
+    
+    Lagrange multiplers transformation
+
+Lec12: Support vector machines2(Non-linear)
+
+    1, Relax the constraints
+    
+    [image](https://user-images.githubusercontent.com/77312114/116800792-cb295780-ab36-11eb-8568-67e6dd6adc76.png)
+
+    2, Feature mapping
+    
+    Using Kernel (Dot product) 
+    [image](https://user-images.githubusercontent.com/77312114/116800870-6c181280-ab37-11eb-8e10-afde36b69bd5.png)
+    
+    Kernel types (Normal kernel - Radial basis/Gaussian kernel - Sigmoiddal kernel - 
+    Diffusion kernel(graphs) - String kernel(protein)) 
 
 Lec13: Unsupervised learning
 
