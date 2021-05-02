@@ -152,9 +152,21 @@ Lec12: Support vector machines2(Non-linear)
 
 Lec13: Unsupervised learning
 
+    K-means (Fixed Variance) - Gaussian Mixture Model (Expectation Maximization Modeling) 
+
+    Anomaly Detection (Use Generative approach) - Dim reduction - Autoregression - Autoencoding
+    
 Lec14: Neural networks
 
+    Notations (N, H, N-H-1)
+    
+    Organizing the trianing data (Stochasi]tic GD, Batch GD, Mini-batch GD)
+
 Lec15: Neural networks (cont'd)
+
+    Relu
+    
+    Encoding methods (one-hot, 1-of-k, 1-to-n, thermometer)
 
 Lec16: Deep learning
 
