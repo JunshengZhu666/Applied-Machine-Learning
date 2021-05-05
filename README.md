@@ -170,6 +170,23 @@ Lec15: Neural networks (cont'd)
 
 Lec16: Deep learning
 
+    Autoencoder - Stacked autoencoders
+    
+    Regularization(sparse): Weight tying, Penalize the hidden units output or the average output 
+    
+    Denoising(robust): Additive Gaussian noise, Dropout, Batch-norm
+    
+    Training protocols: Purely supervised(speech etc.) Supervised-classider-on-top(fewer labeled) 
+    [image](https://user-images.githubusercontent.com/77312114/117086492-3c5b4b80-ad7f-11eb-8634-f01731632acb.png)
+    
+    CNN:
+    www.image-net.com 
+    
+    Ideas: Local receptive fields, Shared parameters matrix, Pooling between neighbourood
+    
+    Layers: Convolutional - Pooling - Fully connected 
+    
+
 Lec17: Deep learning (cont'd)
 
 Lec18: Semi-supervised learning / Generative Models
