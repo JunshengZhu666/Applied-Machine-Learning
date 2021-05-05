@@ -232,7 +232,7 @@ Lec20: Gaussian Processes (quantify uncertainty in regression)
 Lec21: Bayesian Optimization
 
     Choosing between linear methods
-    ![image](https://user-images.githubusercontent.com/77312114/117094712-1641a580-ad97-11eb-9079-9a4bdaaebb34.png)
+   [image](https://user-images.githubusercontent.com/77312114/117094712-1641a580-ad97-11eb-9079-9a4bdaaebb34.png)
 
 
 Lec23: Parallelization for large-scale ML
