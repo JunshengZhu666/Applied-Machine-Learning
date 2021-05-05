@@ -187,13 +187,47 @@ Lec16: Deep learning
     Layers: Convolutional - Pooling - Fully connected 
     
 
-Lec17: Deep learning (cont'd)
+Lec17: Deep learning (RNN)
+
+    Arbitrary topology - Directed cycle(delay) 
+    
+    Backprop(tied weight on the unrolled RNN) 
+    
+    LSTMs & Bi-LSTMs
+    
+    Neural Language Modeling (Continuous space word representation - Nonlinear hidden layer - Softmax normalization) 
+
+    Evaluation(Perplexity): Machine translation (BLEU, METEOR) Text summarization (ROUGE)
 
 Lec18: Semi-supervised learning / Generative Models
 
-Lec19: Bayesian Inference
+    Boundary shift
+    
+    Self-training algorithm (warpper method, mistakes reinforce) 
+    
+    Generative approach (Gaussian distribution boundary shift - EM method) 
+    
+    Generative Adversarial Nets
 
-Lec20: Gaussian Processes
+Lec19: Bayesian Inference (estimate the uncertainty)
+
+    Conjugate priors( Prior and Posterior have same family) 
+    
+    Examples: Tossing coins, 1-d Gaussian mean 
+    
+    Bayesian linear regression 
+
+Lec20: Gaussian Processes (quantify uncertainty in regression) 
+
+    Determining uncertainty (1, Determine posterior 2, Combine predictions) 
+    
+    Bayesian linear regression (Inference, Prediction) 
+    
+    Beyond linear regression (Grid of radial basis functions, Polynomial expansion) 
+    
+    Avoid using features (Instance-based learning, SVM-kernels) 
+    
+    Kernelizing Bayesian linear regression --> Gaussian Process
 
 Lec21: Bayesian Optimization
 
