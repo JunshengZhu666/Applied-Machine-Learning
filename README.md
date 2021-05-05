@@ -140,12 +140,12 @@ Lec12: Support vector machines2(Non-linear)
 
     1, Relax the constraints
     
-    [image](https://user-images.githubusercontent.com/77312114/116800792-cb295780-ab36-11eb-8568-67e6dd6adc76.png)
+   [image](https://user-images.githubusercontent.com/77312114/116800792-cb295780-ab36-11eb-8568-67e6dd6adc76.png)
 
     2, Feature mapping
     
     Using Kernel (Dot product) 
-    [image](https://user-images.githubusercontent.com/77312114/116800870-6c181280-ab37-11eb-8e10-afde36b69bd5.png)
+   [image](https://user-images.githubusercontent.com/77312114/116800870-6c181280-ab37-11eb-8e10-afde36b69bd5.png)
     
     Kernel types (Normal kernel - Radial basis/Gaussian kernel - Sigmoiddal kernel - 
     Diffusion kernel(graphs) - String kernel(protein)) 
@@ -177,7 +177,7 @@ Lec16: Deep learning
     Denoising(robust): Additive Gaussian noise, Dropout, Batch-norm
     
     Training protocols: Purely supervised(speech etc.) Supervised-classider-on-top(fewer labeled) 
-    [image](https://user-images.githubusercontent.com/77312114/117086492-3c5b4b80-ad7f-11eb-8634-f01731632acb.png)
+   [image](https://user-images.githubusercontent.com/77312114/117086492-3c5b4b80-ad7f-11eb-8634-f01731632acb.png)
     
     CNN:
     www.image-net.com 
@@ -233,6 +233,11 @@ Lec21: Bayesian Optimization
 
     Choosing between linear methods
    [image](https://user-images.githubusercontent.com/77312114/117094712-1641a580-ad97-11eb-9079-9a4bdaaebb34.png)
+   
+    Hyperparameter optimisation for GPR & BLR 
+   ![image](https://user-images.githubusercontent.com/77312114/117095136-20b06f00-ad98-11eb-8a45-10c942842996.png)
+
+   
 
 
 Lec23: Parallelization for large-scale ML
