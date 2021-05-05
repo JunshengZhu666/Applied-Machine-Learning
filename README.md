@@ -235,7 +235,7 @@ Lec21: Bayesian Optimization
    [image](https://user-images.githubusercontent.com/77312114/117094712-1641a580-ad97-11eb-9079-9a4bdaaebb34.png)
    
     Hyperparameter optimisation for GPR & BLR 
-   ![image](https://user-images.githubusercontent.com/77312114/117095136-20b06f00-ad98-11eb-8a45-10c942842996.png)
+   [image](https://user-images.githubusercontent.com/77312114/117095136-20b06f00-ad98-11eb-8a45-10c942842996.png)
 
    
 
