@@ -237,13 +237,47 @@ Lec21: Bayesian Optimization
     Hyperparameter optimisation for GPR & BLR 
    [image](https://user-images.githubusercontent.com/77312114/117095136-20b06f00-ad98-11eb-8a45-10c942842996.png)
 
-   
-
+        1,Marginal likelihood (used to choose features or kernels) 
+        
+        2,Automatic relevance determination(ARD) (High length scale - Low relevance) 
+                
+    Optimate unknown functions - Acquisition function (sample the highest value and uncertainty) 
+    
+    Application: hyperparameter-optimization
 
 Lec23: Parallelization for large-scale ML
 
+    Hadoop (Distributed File System - MapReduce - Advanced components) 
+    
+    Word count example (Parallel Execution) 
+   [image](https://user-images.githubusercontent.com/77312114/117107165-b9081d00-adb3-11eb-8704-b6f82e32ae20.png)
+
+    Parallel learning (Algorithm, Parameter search, Decision trees) 
+
 Lec24: Missing data
 
+    Missing types: 
+    
+    Missing Completely at Random (MCAR)
+    Missing at Random (MAR) - Observed features depend
+    Not Missing at Random (NMAR)
+    
+    Strategies(pros & cons):
+    
+    1, Deletion 
+    (Listwise - Pairwise)
+    
+    2, Substitution methods
+    (mean/mode sub)
+    (include binary indicator variable)
+    (regression imputation)
+    
+    3, Model-based methods
+    (generative methods - EM)
+    (multiple imputation - repeat and vote) 
+    
+    Other courses
+    
 
 
 
