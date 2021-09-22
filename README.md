@@ -9,33 +9,33 @@ https://github.com/ageron/handson-ml2
 
 1, Booknote 
 
-CH16 NLP with RNNs and Attention
+### CH16 NLP with RNNs and Attention
 
-16.1 Character RNN 
+> 16.1 Character RNN 
 
-    16.1.1 Get file
+16.1.1 Get file
 
-    filepath = keras.utils.get_file('txt', url) 
-    
-    16.1.2 Tokenize 
-    
-    tokenizer = keras.preprocessing.text.Tokenizer(char_level = True) 
-    
-    16.1.3 Encode all the text 
-    
-    16.1.4 Chopping into Windows
-    
-    dataset = dataset.window(window_length, shift=1, drop_remainder=True)
-    
-    16.1.5 Flatten, batch, and shuffle the data
-    
-    16.1.6 Train the model//
-    
-    16.1.7 Stateful RNN
-    
-    16.1.8 Use batches containing a single wiindow 
-    
-    16.1.9 In the first layer, set 'stateful = True'
+filepath = keras.utils.get_file('txt', url) 
+
+16.1.2 Tokenize 
+
+tokenizer = keras.preprocessing.text.Tokenizer(char_level = True) 
+
+16.1.3 Encode all the text 
+
+16.1.4 Chopping into Windows
+
+dataset = dataset.window(window_length, shift=1, drop_remainder=True)
+
+16.1.5 Flatten, batch, and shuffle the data
+
+16.1.6 Train the model//
+
+16.1.7 Stateful RNN
+
+16.1.8 Use batches containing a single wiindow 
+
+16.1.9 In the first layer, set 'stateful = True'
     
 16.2 Sentiment Analysis 
 
