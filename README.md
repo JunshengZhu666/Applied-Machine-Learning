@@ -10,7 +10,7 @@ https://github.com/ageron/handson-ml2
 
 ### CH16 NLP with RNNs and Attention
 
->>> 16.1 Character RNN 
+>>> #16.1 Character RNN 
 
 16.1.1 Get file
 
