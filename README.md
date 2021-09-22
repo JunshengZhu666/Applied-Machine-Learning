@@ -93,6 +93,82 @@ https://github.com/ageron/handson-ml2
 
 16.4.3 Multi-head attention
 
+### CH15 Processing Sequence Using RNNs and CNNs 
+
+>>> 15.1 Recurrent unists and layers
+
+
+>>> 15.2 Forecasting a Time Series
+
+15.2.1 Create time series data and plot 
+
+15.2.2 Baseline (Linear model and Single RNN)
+
+    Linear_model = keras.models.Sequential([
+    keras.layers.Flatten(input_shape=[50, 1]),
+    keras.layers.Dense(1)
+    ])
+    
+    SingleRNN_model = keras.models.Sequential([
+    keras.layers.SimpleRNN(1, input_shape = [None, 1])
+    ])
+    
+15.2.3 A deep RNN 
+
+    model = keras.models.Sequential([
+    keras.layers.SimpleRNN(20, return_sequences = True, input_shape = [None, 1]),
+    keras.layers.SimpleRNN(20, return_sequences = True),
+    keras.layers.SimpleRNN(1)
+    ])
+
+15.2.4 Predict next 10 steps 
+
+    # train each step predict next 10 steps
+    # use TimeDistributed()
+    model = keras.models.Sequential([
+    keras.layers.SimpleRNN(20, return_sequences = True, input_shape = [None, 1]),
+    keras.layers.SimpleRNN(20, return_sequences = True),
+    keras.layers.TimeDistributed(keras.layers.Dense(10))
+    ])
+
+>>> 15.3 Handling Long Sequences
+
+15.3.1 With batch norm 
+
+    # Usually not helpful in this case
+    keras.layers.BatchNormalization()
+
+15.3.2 LSTMs
+
+    keras.layers.LSTM()
+
+15.3.3 GRUs
+
+    keras.layers.GRU()
+
+15.3.4 Using 1D conv layers 
+
+    # As the first layer, to preserve the most and summarize more
+    model = keras.models.Sequential([
+    keras.layers.Conv1D(filters = 20, kernel_size = 4, strides = 2, padding = 'valid',
+                       input_shape = [None, 1]),
+    keras.layers.GRU(20, return_sequences = True),
+    keras.layers.GRU(20, return_sequences = True),
+    keras.layers.TimeDistributed(keras.layers.Dense(10))
+    
+    ])
+
+15.3.5 WaveNet 
+
+    # for extreme long sequence
+    # use conv1D with dilation
+    model = keras.models.Sequential()
+    model.add(keras.layers.InputLayer(input_shape=[None, 1]))
+    for rate in (1, 2, 4, 8) * 2:
+        model.add(keras.layers.Conv1D(filters=20, kernel_size=2, padding="causal",
+        activation="relu", dilation_rate=rate))
+    model.add(keras.layers.Conv1D(filters=10, kernel_size=1))
+
 =======================================================
 =======================================================
 # An introduction to Statitical Learning with Application in R (1 edition) (Exercise done with R)
