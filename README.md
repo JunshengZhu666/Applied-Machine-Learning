@@ -8,6 +8,7 @@ https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 https://github.com/ageron/handson-ml2
 
 
+
 ### CH16 NLP with RNNs and Attention
 
 
@@ -97,6 +98,8 @@ https://github.com/ageron/handson-ml2
 
 16.4.3 Multi-head attention
 
+
+
 ### CH15 Processing Sequence Using RNNs and CNNs 
 
 
@@ -175,6 +178,18 @@ https://github.com/ageron/handson-ml2
         model.add(keras.layers.Conv1D(filters=20, kernel_size=2, padding="causal",
         activation="relu", dilation_rate=rate))
     model.add(keras.layers.Conv1D(filters=10, kernel_size=1))
+    
+
+
+# CH14 Deep Computer Vision Using Convolutional Neural Networks 
+
+>>> 14.1 Convolutional Layers 
+
+>>> 14.2 Pooling Layers 
+
+>>> 14.3 CNN architectures 
+
+>>> 14.5 Object detection
 
 =======================================================
 =======================================================
