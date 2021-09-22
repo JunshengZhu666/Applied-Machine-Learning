@@ -7,6 +7,53 @@ https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 (website with code example, using tensorflow2)
 https://github.com/ageron/handson-ml2
 
+1, Booknote 
+
+CH16 NLP with RNNs and Attention
+
+16.1 Character RNN 
+
+    16.1.1 Get file
+
+    filepath = keras.utils.get_file('txt', url) 
+    
+    16.1.2 Tokenize 
+    
+    tokenizer = keras.preprocessing.text.Tokenizer(char_level = True) 
+    
+    16.1.3 Encode all the text 
+    
+    16.1.4 Chopping into Windows
+    
+    dataset = dataset.window(window_length, shift=1, drop_remainder=True)
+    
+    16.1.5 Flatten, batch, and shuffle the data
+    
+    16.1.6 Train the model//
+    
+    16.1.7 Stateful RNN
+    
+    16.1.8 Use batches containing a single wiindow 
+    
+    16.1.9 In the first layer, set 'stateful = True'
+    
+16.2 Sentiment Analysis 
+
+    # using the IMDb reviews 
+    
+    1, Load the preprocess the data 
+    
+    def preprocess(X_batch, y_batch):
+    X_batch = tf.strings.substr(X_batch, 0, 300) 
+    X_batch = tf.strings.regex_replace(X_batch, b"<br\\s*/?>",b" ")
+    X_batch = tf.strings.regex_replace(X_batch, b"[^a-zA-Z']",b" ")
+    X_batch = tf.strings.split(X_batch) 
+    return X_batch.to_tensor(default_value = b"<pad>"), y_batch         
+
+16.3 Encoder - Decoder 
+
+16.4 Attention
+
 =======================================================
 =======================================================
 # An introduction to Statitical Learning with Application in R (1 edition) (Exercise done with R)
