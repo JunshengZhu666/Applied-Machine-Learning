@@ -10,6 +10,7 @@ https://github.com/ageron/handson-ml2
 
 ### CH16 NLP with RNNs and Attention
 
+
 >>> 16.1 Character RNN 
 
 16.1.1 Get file
@@ -36,6 +37,7 @@ https://github.com/ageron/handson-ml2
 
 16.1.9 In the first layer, set 'stateful = True'
     
+
 >>> 16.2 Sentiment Analysis 
 
 16.2.1 using the IMDb reviews 
@@ -60,6 +62,7 @@ https://github.com/ageron/handson-ml2
     import tensorflow_hub as hub 
     hub.KerasLayer(url, dtype=tf.string, input_shape=[], output_shape=[50]),
 
+
 >>> 16.3 Encoder - Decoder 
 
 16.3.1 Bucketing 
@@ -83,6 +86,7 @@ https://github.com/ageron/handson-ml2
     # pass to decoder
     outputs, _, _ = decoder()
 
+
 >>> 16.4 Attention
 
 16.4.1 Luong Dot Product attention 
@@ -95,7 +99,9 @@ https://github.com/ageron/handson-ml2
 
 ### CH15 Processing Sequence Using RNNs and CNNs 
 
+
 >>> 15.1 Recurrent unists and layers
+
 
 
 >>> 15.2 Forecasting a Time Series
@@ -130,6 +136,7 @@ https://github.com/ageron/handson-ml2
     keras.layers.SimpleRNN(20, return_sequences = True),
     keras.layers.TimeDistributed(keras.layers.Dense(10))
     ])
+
 
 >>> 15.3 Handling Long Sequences
 
