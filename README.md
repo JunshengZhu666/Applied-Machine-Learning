@@ -15,17 +15,17 @@ https://github.com/ageron/handson-ml2
 
 16.1.1 Get file
 
-filepath = keras.utils.get_file('txt', url) 
+    filepath = keras.utils.get_file('txt', url) 
 
 16.1.2 Tokenize 
 
-tokenizer = keras.preprocessing.text.Tokenizer(char_level = True) 
+    tokenizer = keras.preprocessing.text.Tokenizer(char_level = True) 
 
 16.1.3 Encode all the text 
 
 16.1.4 Chopping into Windows
 
-dataset = dataset.window(window_length, shift=1, drop_remainder=True)
+    dataset = dataset.window(window_length, shift=1, drop_remainder=True)
 
 16.1.5 Flatten, batch, and shuffle the data
 
@@ -37,22 +37,62 @@ dataset = dataset.window(window_length, shift=1, drop_remainder=True)
 
 16.1.9 In the first layer, set 'stateful = True'
     
-16.2 Sentiment Analysis 
+> 16.2 Sentiment Analysis 
 
-    # using the IMDb reviews 
+16.2.1 using the IMDb reviews 
     
-    1, Load the preprocess the data 
+    #Load the preprocess the data 
     
     def preprocess(X_batch, y_batch):
     X_batch = tf.strings.substr(X_batch, 0, 300) 
     X_batch = tf.strings.regex_replace(X_batch, b"<br\\s*/?>",b" ")
     X_batch = tf.strings.regex_replace(X_batch, b"[^a-zA-Z']",b" ")
     X_batch = tf.strings.split(X_batch) 
-    return X_batch.to_tensor(default_value = b"<pad>"), y_batch         
+    return X_batch.to_tensor(default_value = b"<pad>"), y_batch  
+    
+16.2.2 Build the vocabulary, keep only 10,000 words
+
+    from collections import Counter 
+
+16.2.3 Masking, set 'mask_zero = True'
+
+16.2.4 Resuing Pretrained Embeddings 
+
+    import tensorflow_hub as hub 
+    hub.KerasLayer(url, dtype=tf.string, input_shape=[], output_shape=[50]),
 
 16.3 Encoder - Decoder 
 
+16.3.1 Bucketing 
+
+    tf.data.experimental.bucket_by_sequence_length() 
+
+16.3 Addons project 
+
+    import tensorflow_addons as tfa
+
+16.3 Bidirectional RNNS 
+
+    keras.layers.Bidirectional(keras.layers.GRU(10, return_sequences = True) 
+
+16.3 Beam Search (keeping k candidates in each step) 
+    
+    # wraps all decoder
+    decoder = tfa.seq2seq.beam_search_decoder.BeamSearchDecoder()
+    # copy last state of encoder
+    decoder_initial_state = tfa.seq2seq.beam_search_decoder.tile_batch()
+    # pass to decoder
+    outputs, _, _ = decoder()
+
 16.4 Attention
+
+16.4.1 Luong Dot Product attention 
+
+    tfa.seq2seq.attention_wrapper.LuongAttention()
+
+16.4.2 Position Encoding
+
+16.4.3 Multi-head attention
 
 =======================================================
 =======================================================
