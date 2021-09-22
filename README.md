@@ -1,9 +1,48 @@
 =======================================================
 =======================================================
-
 # Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2eidtion) (Example Done, Exercise doing)
 
 https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
+
+(website with code example, using tensorflow2)
+https://github.com/ageron/handson-ml2
+
+=======================================================
+=======================================================
+# An introduction to Statitical Learning with Application in R (1 eidition) (Exercise done with R)
+
+1, The Book
+
+http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf
+
+CH1 Introduction
+
+CH2 Statistical Learning (Model Accuracy)
+
+CH3 Linear Regression
+
+CH4 Classification (Logistic Regression, Linear Discriminant Analysis, Quadratic Discriminant Analysis, K-Nearest Neighbors)
+
+CH5 Resampling Methods (Cross Validation, The Bootstrap)
+
+CH6 Linear Model Selection and Regularization (Subset-Stepwise, Ridge-Lasso, Principal Components Regression-Partial Least Squares)
+
+CH7 Moving Beyond Linearity (Ploynomial Regression, Splines, Generalized Additive Models)
+
+CH8 Tree-Based Methods (Decision Trees, Bagging, Random Forests, Boosting)
+
+CH9 Support Vector Machines (Maximal Margin Classifer, SVMs)
+
+CH10 Unsupervised Learning (PCA, K-Means Clustering, Hierarchical Clustering)
+
+2, The Course Video
+
+https://lagunita.stanford.edu/courses
+
+3, The exercise in R
+
+https://blog.princehonest.com/stat-learning/
+
 
 =======================================================
 =======================================================
