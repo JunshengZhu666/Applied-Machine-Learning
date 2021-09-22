@@ -1,6 +1,6 @@
 =======================================================
 =======================================================
-# Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2eidtion) (Example Done, Exercise doing)
+# Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2 edtion) (Example Done, Exercise doing)
 
 https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 
@@ -9,7 +9,7 @@ https://github.com/ageron/handson-ml2
 
 =======================================================
 =======================================================
-# An introduction to Statitical Learning with Application in R (1 eidition) (Exercise done with R)
+# An introduction to Statitical Learning with Application in R (1 edition) (Exercise done with R)
 
 1, The Book
 
@@ -322,20 +322,4 @@ Lec24: Missing data
     (multiple imputation - repeat and vote) 
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
