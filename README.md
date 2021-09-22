@@ -10,7 +10,7 @@ https://github.com/ageron/handson-ml2
 
 ### CH16 NLP with RNNs and Attention
 
->>> #16.1 Character RNN 
+>>> 16.1 Character RNN 
 
 16.1.1 Get file
 
@@ -36,7 +36,7 @@ https://github.com/ageron/handson-ml2
 
 16.1.9 In the first layer, set 'stateful = True'
     
-> 16.2 Sentiment Analysis 
+>>> 16.2 Sentiment Analysis 
 
 16.2.1 using the IMDb reviews 
     
@@ -60,21 +60,21 @@ https://github.com/ageron/handson-ml2
     import tensorflow_hub as hub 
     hub.KerasLayer(url, dtype=tf.string, input_shape=[], output_shape=[50]),
 
-16.3 Encoder - Decoder 
+>>> 16.3 Encoder - Decoder 
 
 16.3.1 Bucketing 
 
     tf.data.experimental.bucket_by_sequence_length() 
 
-16.3 Addons project 
+16.3.2 Addons project 
 
     import tensorflow_addons as tfa
 
-16.3 Bidirectional RNNS 
+16.3.3 Bidirectional RNNS 
 
     keras.layers.Bidirectional(keras.layers.GRU(10, return_sequences = True) 
 
-16.3 Beam Search (keeping k candidates in each step) 
+16.3.4 Beam Search (keeping k candidates in each step) 
     
     # wraps all decoder
     decoder = tfa.seq2seq.beam_search_decoder.BeamSearchDecoder()
@@ -83,7 +83,7 @@ https://github.com/ageron/handson-ml2
     # pass to decoder
     outputs, _, _ = decoder()
 
-16.4 Attention
+>>> 16.4 Attention
 
 16.4.1 Luong Dot Product attention 
 
