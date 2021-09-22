@@ -1,11 +1,17 @@
-# Applied-Machine-Learning-
-COMP551 - Prof. Joelle Pineau - McGill University
+=======================================================
+=======================================================
 
-From https://github.com/Pulkit-Khandelwal/COMP551-Applied-Machine-Learning
+# Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2eidtion) (Example Done, Exercise doing)
 
-Thank you for make it online!
+https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 
 =======================================================
+=======================================================
+# Applied-Machine-Learning- (Lecture Done)
+
+COMP551 - Prof. Joelle Pineau 
+
+From https://github.com/Pulkit-Khandelwal/COMP551-Applied-Machine-Learning
 
 Course Skeleton 
 
@@ -55,9 +61,7 @@ Lec23: Parallelization for large-scale ML
 
 Lec24: Missing data
 
-=======================================================
-
-Course Content 
+Course Notes
 
 Lec1: Introduction
 
@@ -278,7 +282,6 @@ Lec24: Missing data
     (generative methods - EM)
     (multiple imputation - repeat and vote) 
     
-    Other courses
     
 
 
