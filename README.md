@@ -7,11 +7,10 @@ https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 (website with code example, using tensorflow2)
 https://github.com/ageron/handson-ml2
 
-1, Booknote 
 
 ### CH16 NLP with RNNs and Attention
 
-> 16.1 Character RNN 
+>>> 16.1 Character RNN 
 
 16.1.1 Get file
 
