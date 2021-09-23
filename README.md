@@ -185,9 +185,64 @@ https://github.com/ageron/handson-ml2
 
 >>> 14.1 Convolutional Layers 
 
+14.1.1 padding: 'SAME' use zero padding, 'VALID' would igore the most outside 
+
+    conv = keras.layers.Conv2D(filters=32, kernel_size=3, strides=1,
+    padding="same", activation="relu")
+
 >>> 14.2 Pooling Layers 
 
+14.2.1 Max pooling and Avg pooling 
+
+    # usually use max 
+    max_pool = keras.layers.MaxPool2D(pool_size = 2) 
+    # also have avg pool 
+    global_avg_pool = keras.layers.GlobalAvgPool2D() 
+
 >>> 14.3 CNN architectures 
+
+14.3.1 A CNN model 
+
+    model = keras.models.Sequential([
+    # 64 * 7 * 7 filters, 28 * 28 pixel 
+    keras.layers.Conv2D(64, 7, activation = "relu", padding = "same", 
+                       input_shape = [28, 28, 1]),
+    keras.layers.MaxPooling2D(2), 
+    # increase the number of filters
+    keras.layers.Conv2D(128, 3, activation="relu", padding="same"), 
+    keras.layers.Conv2D(128, 3, activation="relu", padding="same"), 
+    keras.layers.MaxPooling2D(2), 
+    keras.layers.Conv2D(256, 3, activation="relu", padding="same"), 
+    keras.layers.Conv2D(128, 3, activation="relu", padding="same"),
+    keras.layers.MaxPooling2D(2), 
+    keras.layers.Flatten(), 
+    keras.layers.Dense(128, activation = 'relu'),
+    keras.layers.Dropout(0.5), 
+    keras.layers.Dense(64, activation = 'relu'), 
+    keras.layers.Dropout(0.5),
+    keras.layers.Dense(10, activation = 'relu')
+    ])
+
+14.3.2 Other models
+
+    # LeNet-5, AlexNet, GoogleNet, 
+
+14.3 Use pretrained model and transfer learning 
+
+    # download the data 
+    #...
+    # split and process the data
+    #...
+    # create the model on top of the Xception model 
+    base_model = keras.applications.xception.Xception(weights = "imagenet", include_top = False)
+    avg = keras.layers.GlobalAveragePooling2D()(base_model.output) 
+    output = keras.layers.Dense(n_classes, activation = "softmax")(avg) 
+    model = keras.Model(inputs = base_model.input, outputs = output) 
+    
+    # freezing the pretrained layers at the beginning 
+    for layer in base_model.layers: 
+        layer.trainable = False
+       #layer.trainable = True
 
 >>> 14.5 Object detection
 
