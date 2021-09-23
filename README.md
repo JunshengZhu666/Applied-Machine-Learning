@@ -305,7 +305,7 @@ https://github.com/ageron/handson-ml2
 
 12.1.1 
     
-![image.png](attachment:image.png)
+![image](https://user-images.githubusercontent.com/77312114/134591354-360101f3-df20-4de4-bfcf-3dabf873c910.png)
 
     tf.constant([],[])
     tf.shape()
@@ -337,7 +337,7 @@ https://github.com/ageron/handson-ml2
 
 >>> 11.1 Vanishing Gradients 
 
-![image.png](attachment:image.png)
+![image](https://user-images.githubusercontent.com/77312114/134591438-f80dc698-9913-46d0-9dab-18a08c1bdcd3.png)
 
 11.1.1 Initialier and Activation Functions 
 
@@ -411,10 +411,114 @@ https://github.com/ageron/handson-ml2
 
     keras.layers.Dropout(rate = 0.2)
     # remember to adjust output 
+    # have also, Monte Carlo Dropout
+    # max - norm
 
-11.4.4
+11.4.4 A default DNN configuration 
 
-11.4.5
+![image](https://user-images.githubusercontent.com/77312114/134591605-d4c8652a-9a37-4610-b934-918ce362e2a8.png)
+
+### CH10 ANNs with Keras 
+
+>>> 10.1 From Biological to Artificial Neurons 
+
+>>> 10.2 Implementing MLPs with Keras
+
+10.2.1 Define the model by a list 
+
+    model = keras.models.Sequential([
+    keras.layers.Flatten(input_shape=[28, 28]),
+    keras.layers.Dense(300, activation="relu"),
+    keras.layers.Dense(100, activation="relu"),
+    keras.layers.Dense(10, activation="softmax")
+    ])
+
+10.2.2 Get info about the model 
+
+    # see layers
+    model.layers
+    
+    # see summary and plot the model 
+    model.summary()
+    keras.utils.plot_model(model, 'name', show_shapes = True) 
+    
+    # see weights and biases of a layer
+    weights, biases = hidden1.get_weights()
+
+10.2.3 Compile and fit the model 
+
+    # compile 
+    model.compile(loss = '', optimizer = '', metrics = [])
+    
+    # fit 
+    history = model.fit(X_train, y_train, epochs = , validation_data = (X_valid, y_valid)）
+
+10.2.4 Evaluation and Prediction 
+
+    # plot the learning curve 
+    import pandas as pd
+    pd.DataFrame(history.history).plot(figsize=(8, 5))
+    plt.grid(True)
+    plt.gca().set_ylim(0, 1)
+    save_fig("keras_learning_curves_plot")
+    plt.show()
+
+    # evaluate and predict
+    model.evaluate(X_test, y_test) 
+    y_proba = model.predict(X_new) 
+
+10.2.5 Saving and Restoring 
+
+    # normal save and use
+    model.save('my_keras_model.h5') 
+    model = keras.models.load_model('my_keras_model.h5')
+
+10.2.6 Using Callbacks During Training 
+
+    model.compile() 
+    
+    # save checkpoint
+    checkpoint_cb = keras.callbacks.ModelCheckpoint('my_keras.model.h5',
+    save_best_only = True) 
+    
+    # early stopping 
+    early_stopping_cb = keras.callbacks.EarlyStopping(patience=10,
+    restore_best_weights=True)
+    
+    history = model.fit( , , callbacks = [checkpoint_cb,early_stopping_cb])
+    
+    # rollback to the best model 
+    model = keras.models.load_model("my_keras_model.h5")
+
+10.2.7 Model visualization 
+
+    # Tensorboard 
+    tensorboard_cb = keras.callbacks.TensorBoard(run_logdir)
+
+10.2.8
+
+>>> 10.3 Fine-tuning Neural Network
+
+10.3.1 Random Search 
+
+    from scipy.stats import reciprocal
+    from sklearn.model_selection import RandomizedSearchCV
+
+    param_distribs = {
+        "n_hidden": [0, 1, 2, 3],
+        "n_neurons": np.arange(1, 100)               .tolist(),
+        "learning_rate": reciprocal(3e-4, 3e-2)      .rvs(1000).tolist(),
+    }
+
+    rnd_search_cv = RandomizedSearchCV(keras_reg, param_distribs, n_iter=10, cv=3,verbose=2)
+    rnd_search_cv.fit(X_train, y_train, epochs=100,
+                      validation_data=(X_valid, y_valid),
+                      callbacks=[keras.callbacks.EarlyStopping(patience=10)])
+
+    # show the best param 
+    rnd_search_cv.best_params_
+    rnd_search_cv.best_score_
+    rnd_search_cv.best_estimator_.model
 
 =======================================================
 =======================================================
