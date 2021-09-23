@@ -181,7 +181,7 @@ https://github.com/ageron/handson-ml2
     
 
 
-# CH14 Deep Computer Vision Using Convolutional Neural Networks 
+### CH14 Deep Computer Vision Using Convolutional Neural Networks 
 
 >>> 14.1 Convolutional Layers 
 
@@ -245,6 +245,33 @@ https://github.com/ageron/handson-ml2
        #layer.trainable = True
 
 >>> 14.5 Object detection
+
+### CH13 Loading and Precessing Dara with TensorFlow 
+
+>>> 13.1 The Data API
+
+13.1.1
+
+13.1.2
+
+13.1.3 
+
+
+>>> 13.2 The TFRecord Format
+
+13.2
+
+13.2
+
+13.2
+
+>>> 13.3 Preprocessing the Input Features
+
+13.3
+
+13.3
+
+13.3
 
 =======================================================
 =======================================================
