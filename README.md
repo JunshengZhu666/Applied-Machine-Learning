@@ -246,32 +246,175 @@ https://github.com/ageron/handson-ml2
 
 >>> 14.5 Object detection
 
+
 ### CH13 Loading and Precessing Dara with TensorFlow 
 
 >>> 13.1 The Data API
 
-13.1.1
+13.1.1 Data manipulation 
 
-13.1.2
+    # Chaining transformations
+    dataset = dataset.repeat(3).batch(7)
+    
+    # create a new one using map 
+    dataset = dataset.map(lambda x: x * 2)
+    
+    # filter the dataset 
+    dataset = dataset.filter(lambda x: x < 10)
+    
+    # shuffle the dataset 
+    dataset = tf.data.Dataset.range(10).repeat(3) 
+    dataset = dataset.shuffle(buffer_size = 5, seed = 42).batch(7)
 
-13.1.3 
+13.1.2 Prefetching 
 
+    # Would parallelize threads and GPU
+
+13.1.3 Really large file
+
+    # Split into multiple csv files and pipelining
 
 >>> 13.2 The TFRecord Format
 
-13.2
-
-13.2
-
-13.2
-
 >>> 13.3 Preprocessing the Input Features
 
-13.3
+13.3.1 One-Hot Encoding
 
-13.3
+13.3.2 Word Embedding
 
-13.3
+13.3.3 Keras Preprocessing Layers
+
+    keras.layers.Normzalization()
+
+13.3.4 In-build dataset 
+
+    import tensorflow_datasets as tfds
+
+    # load
+    dataset = tfds.load(name = "mnist")
+
+    # train and test
+    mnist_train, mnist_test = dataset["train"], dataset["test"]
+
+    # shuffle, batch and prefetch 
+    mnist_train = mnist_train.shuffle(10000).batch(32).prefetch(1) 
+
+### CH12 Custom Models and Training with Tensorflow 
+
+>>> 12.1 Using like Numpy
+
+12.1.1 
+    
+![image.png](attachment:image.png)
+
+    tf.constant([],[])
+    tf.shape()
+    tf.Variable()
+
+>>> 12.2 Customizing Models and Training 
+
+12.2.1 Normal Processing 
+
+    # load, split, and scale the data 
+    from sklearn.datasets import fetch_california_housing
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+
+12.2.2 Define Huber Loss 
+
+    def huber_fn(y_true, y_pred):
+        error = y_true - y_pred
+        is_small_error = tf.abs(error) < 1
+        squared_loss = tf.square(error) / 2
+        linear_loss = tf.abs(error) - 0.5
+        return tf.where(is_small_error, squared_loss, linear_loss)
+
+12.2.3 Custom Layers, custom noise, custom metrics
+
+>>> 12.3 TF Functions and Graphs
+
+### CH11 Training Deep Neural Networks
+
+>>> 11.1 Vanishing Gradients 
+
+![image.png](attachment:image.png)
+
+11.1.1 Initialier and Activation Functions 
+
+    keras.layers.Dense(10, activation="relu", kernel_initializer="he_normal")
+    
+
+11.1.2 Batch Norm
+
+    keras.layers.BatchNormalization()
+
+11.1.3 Gradient Cliping 
+
+    optimizer = keras.optimizers.SGD(clipvalue=1.0) 
+
+>>> 11.2 Reusing Pretrained Layers 
+
+11.2.1 Save, Clone, and Reuse 
+
+    # save model A 
+    model_A.save("my_model_A.h5")
+    
+    # first clone the model 
+    model_A_clone = keras.models.clone_model(model_A) 
+    model_A_clone.set_weights(model_A.get_weights())
+    
+    # reuse model A 
+    model_A_clone = keras.models.load_model("my_model_A.h5")
+    model_B_on_A = keras.models.Sequential(model_A_clone.layers[:-1])
+    model_B_on_A.add(keras.layers.Dense(1, activation='sigmoid'))
+    
+    # avoid cold-start 
+
+>>> 11.3 Optimizers 
+
+11.3.1 momentum and nesterov gradient
+
+    optimizer = keras.optimizers.SGD(lr = 0.001, momentum = 0.9)
+    optimizer = keras.optimizers.SGD(lr = 0.001, momentum = 0.9, nesterov = True)
+
+11.3.2 RMSProp
+
+    optimizer = keras.optimizers.RMSprop(lr = 0.001, tho = 0.9) 
+
+11.3.3 Adam optimization
+
+    optimizer = keras.optimizers.Adam(lr = 0.001, beta_l = 0.9, beta_2 = 0.99)
+
+11.3.4 Learning rate scheduling 
+
+    # power scheduling 
+    # exponential scheduling 
+    # piecewise constant scheduling 
+    # performance sheduling 
+
+>>> 11.4 Regularization
+
+11.4.1 L1 & L2 
+
+    kernel_regularizer=keras.regularizers.l2(0.01)
+
+11.4.2 Use partial to wrap a dense layer 
+
+    from functools import partial
+
+    RegularizedDense = partial(keras.layers.Dense,
+                                activation="elu",
+                                kernel_initializer="he_normal",
+                                kernel_regularizer=keras.regularizers.l2(0.01))
+
+11.4.3 Dropout 
+
+    keras.layers.Dropout(rate = 0.2)
+    # remember to adjust output 
+
+11.4.4
+
+11.4.5
 
 =======================================================
 =======================================================
