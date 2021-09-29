@@ -37,8 +37,54 @@ https://github.com/ageron/handson-ml2
 
 ### CH16. Natural Language Processing with RNNs and Attention
 
+======
 
-### CH10 ANNs with Keras 
+### >>> CH8 Dimensionality Reduction
+
+>>> 8.1 Main Approaches
+
+8.1.1 Projection and Manifold Learning
+
+>>> 8.2 PCA
+
+8.2.1 PCA with sklearn
+
+    from sklearn.decomposition import PCA 
+    
+    # specify the dimension
+    pca = PCA(n_components = 2) 
+    X2D = pca.fit_transform(X) 
+    
+    # explained var ratio
+    print(pca.explained_variance_ratio_)
+    
+    # specify the var ratio to get the right dimensions
+    pca == PCA(n_components=0.95) 
+    X_reduced = pca.fit_transform(X)
+    
+    # it is useful to plot and see var ratio
+    
+    # decompress the data 
+    pca = PCA(n_components=154)
+    X_reduced = pca.fit_transform(X_train)
+    X_recovered = pca.inverse_transform(X_reduced)
+   
+8.2.2 Speed up PCA
+
+    rnd_pca = PCA(n_components=154, svd_solver="randomized")
+    X_reduced = rnd_pca.fit_transform(X)
+
+>>> 8.3 Kernel PCA
+
+8.3
+
+8.3
+
+8.3
+
+### >>> CH9 
+
+### >>> CH10 ANNs with Keras 
 
 >>> 10.1 From Biological to Artificial Neurons 
 
@@ -140,7 +186,7 @@ https://github.com/ageron/handson-ml2
     rnd_search_cv.best_score_
     rnd_search_cv.best_estimator_.model
 
-### CH11 Training Deep Neural Networks
+### >>> CH11 Training Deep Neural Networks
 
 >>> 11.1 Vanishing Gradients 
 
@@ -228,7 +274,7 @@ https://github.com/ageron/handson-ml2
 
 
 
-### CH12 Custom Models and Training with Tensorflow 
+### >>> CH12 Custom Models and Training with Tensorflow 
 
 >>> 12.1 Using like Numpy
 
@@ -264,7 +310,7 @@ https://github.com/ageron/handson-ml2
 
 
 
-### CH13 Loading and Precessing Dara with TensorFlow 
+### CH13 >>> Loading and Precessing Dara with TensorFlow 
 
 >>> 13.1 The Data API
 
@@ -316,7 +362,7 @@ https://github.com/ageron/handson-ml2
     # shuffle, batch and prefetch 
     mnist_train = mnist_train.shuffle(10000).batch(32).prefetch(1) 
 
-### CH14 Deep Computer Vision Using Convolutional Neural Networks 
+### CH14 >>> Deep Computer Vision Using Convolutional Neural Networks 
 
 >>> 14.1 Convolutional Layers 
 
