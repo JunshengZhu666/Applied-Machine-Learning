@@ -38,6 +38,56 @@ https://github.com/ageron/handson-ml2
 ### CH16. Natural Language Processing with RNNs and Attention
 
 ======
+### >>> CH6 Decision Trees 
+
+>>> 6.1 Training 
+
+6.1 DecisionTreeClassifier 
+
+    from sklearn.tree import DecisionTreeClassifier
+
+    # max_depth + 1 = decision boundaries
+    tree_clf = DecisionTreeClassifier(max_depth = 2)
+
+6.1 Visualization
+
+    from sklearn.tree import export_graphviz
+
+    export_graphviz(
+            tree_clf,
+            out_file=os.path.join(IMAGES_PATH, "iris_tree.dot"),
+            feature_names=iris.feature_names[2:],
+            class_names=iris.target_names,
+            rounded=True,
+            filled=True
+        )
+
+6.1 CART
+
+    # Classification and Regression Tree (CART)
+    # Growing tree with less impurity 
+    
+
+>>> 6.2 Regularization 
+
+6.2 Parameters
+
+    # min_samples_split (the minimum number of samples a nodemust have before it can be split)
+    # min_samples_leaf (the minimum number of samples a leaf node must have)
+    # max_features (the maximum number of features that are evaluated for splitting at each node)
+    # plot and see! 
+
+>>> 6.3 Regression
+
+6.3 DecisionTreeRegressor 
+
+    # by mse
+    from sklearn.tree import DecisionTreeRegressor 
+
+    tree_reg = DecisionTreeRegressor(max_depth=2)
+    tree_reg.fit(X,y)
+    
+    # def plot_regression_predictions()
 
 ### >>> CH7 Ensemble Learning and Random Forests
 
