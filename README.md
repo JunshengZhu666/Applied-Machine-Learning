@@ -44,36 +44,57 @@ https://github.com/ageron/handson-ml2
 
 5.1 Linear SVM
 
-    # important to scaler the data
+    # important to scale the data
+    # scale the data with a pipeline 
     from sklearn.pipeline import Pipeline 
     from sklearn.preprocessing import StandardScaler 
     from sklearn.svm import LinearSVC
     
     svm_clf = Pipeline((
     ("scaler", StandardScaler()),
+    # larger C, larger violation 
     ("linear_svc",LinearSVC(C=1, loss = "hinge")),
     ))
     svm_clf.fit(X, y)
 
-5.1
-
-5.1
-
 >>> 5.2 Nonlinear SVM Classification
 
-5.2
+5.2.1 Nonlinear
 
-5.2
+    # add PolynomialFeatures() into the pipeline
+    from sklearn.pipeline import Pipeline 
+    from sklearn.preprocessing import PolynomialFeatures
 
-5.2
+    polynomial_svm_clf = Pipeline((
+        ("poly_features", PolynomialFeatures(degree = 3)),
+        ("scaler", StandardScaler()),
+        ("svm_slf", LinearSVC(C = 10, loss = "hinge"))
+    ))
+
+5.2.2 SVC class and kernel tricks 
+
+    # using SVC class
+    # coef0 controls how much the model is influenced by high-degree polynomials versus low-degree polynomials
+    from sklearn.svm import SVC 
+    poly_kernel_svm_clf = Pipeline((
+    ("scaler", StandardScaler()),
+    
+    # poly kernel
+    ("svm_slf",SVC(kernel = "poly", degree = 3, coef0 = 1, C = 5))
+    
+    # Gaussian Radial Basis Function (RBF) kernel
+    ("svm_clf", SVC(kernel="rbf", gamma=5, C=0.001))
+    ))
+ 
+ 5.2.3 SVM Regression 
+ 
+    from sklearn.svm import SVR 
+
+    # epsilon = 'height of the street' / 2
+    svm_poly_reg = SVR(kernel = "poly", degree = 1, C=100, epsilon=0.1)
+    svm_poly_reg.fit(X,y)   
 
 >>> 5.3 Under the hood 
-
-5.3
-
-5.3
-
-5.3
 
 ### >>> CH6 Decision Trees 
 
