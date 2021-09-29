@@ -38,6 +38,43 @@ https://github.com/ageron/handson-ml2
 ### CH16. Natural Language Processing with RNNs and Attention
 
 ======
+### >>> CH5 Support Vector Machines
+
+>>> 5.1 Linear SVM Classification
+
+5.1 Linear SVM
+
+    # important to scaler the data
+    from sklearn.pipeline import Pipeline 
+    from sklearn.preprocessing import StandardScaler 
+    from sklearn.svm import LinearSVC
+    
+    svm_clf = Pipeline((
+    ("scaler", StandardScaler()),
+    ("linear_svc",LinearSVC(C=1, loss = "hinge")),
+    ))
+    svm_clf.fit(X, y)
+
+5.1
+
+5.1
+
+>>> 5.2 Nonlinear SVM Classification
+
+5.2
+
+5.2
+
+5.2
+
+>>> 5.3 Under the hood 
+
+5.3
+
+5.3
+
+5.3
+
 ### >>> CH6 Decision Trees 
 
 >>> 6.1 Training 
