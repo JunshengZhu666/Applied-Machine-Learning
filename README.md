@@ -39,6 +39,107 @@ https://github.com/ageron/handson-ml2
 
 ======
 
+### >>> CH7 Ensemble Learning and Random Forests
+
+>>> 7.1 Bagging
+
+7.1 Voting Classifiers
+ 
+    # three classifiers 
+    from sklearn.svm import SVC
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.ensemble import RandomForestClassifier
+    # voting tool
+    from sklearn.ensemble import VotingClassifier
+    
+    # four classifiers in total
+    log_clf = LogisticRegression() 
+    rnd_clf = RandomForestClassifier()
+    svm_clf = SVC() 
+    voting_clf = VotingClassifier(estimators = [('lr', log_clf), ('rf', rnd_clf), ('svc', svm_clf)],)    
+    
+    # look at the accuracy_score 
+    from sklearn.metrics import accuracy_score 
+    for clf in (log_clf, rnd_clf, svm_clf, voting_clf):
+        clf.fit(X_train, y_train)
+        y_pred = clf.predict(X_test)
+        print(clf.__class__.__name__, accuracy_score(y_test, y_pred))    
+    
+7.1 Bagging and Pasting
+
+    from sklearn.ensemble import BaggingClassifier
+    from sklearn.tree import DecisionTreeClassifier
+    
+    # 500 trees, 100 instances for each one, using all cpu cores
+    bag_clf = BaggingClassifier( 
+        DecisionTreeClassifier(), n_estimators = 500,
+        max_samples = 100, bootstrap = True, n_jobs = -1
+    )    
+
+7.1 Out-Of-Bag Evaluation
+
+    oob_score = True
+
+7.1 Random Patches and Random Subspace
+
+    # Random Patches: sampling both instance and features
+    # Random Subspaces: sampling features
+    # BaggingClassifier class 
+    # features param: max_features = , bootstrap_features = , 
+    # instances param: max_sample = , bootstrap = ,
+
+>>> 7.2 Random Forests
+
+7.2 Feature inportance 
+
+     rnd_clf = RandomForestClassifier(n_estimators=500, n_jobs=-1)
+     rnd_clf.feature_importances_
+    
+>>> 7.3 Boosting
+
+7.3 AdaBoost
+
+    # squential training with instance weight updates 
+    # the learning_rate controls the contribution of each tree 
+    from sklearn.ensemble import AdaBoostClassifier 
+
+    ada_clf = AdaBoostClassifier( 
+        DecisionTreeClassifier(max_depth = 1), n_estimators = 200,
+        algorithm = "SAMME.R", learning_rate = 0.5
+    )
+    ada_clf.fit(X_train, y_train)    
+
+7.3 Gradient Boosting
+
+    # sequentially fit by the residual errors
+    from sklearn.ensemble import GradientBoostingRegressor 
+
+    gdrt = GradientBoostingRegressor(max_depth=2, n_estimators=3, learning_rate=1.0)
+    gdrt.fit(X, y)
+
+7.3 Earlystopping 
+
+    # Stochastic Gradient Boosting 
+    # early stopping
+
+    gbrt = GradientBoostingRegressor(max_depth=2, warm_start=True) 
+
+    min_val_error = float("inf")
+    error_going_up = 0 
+    for n_estimators in range(1, 120):
+        gbrt.n_estimators = n_estimators 
+        gbrt.fit(X_train, y_train)
+        y_pred = gbrt.predict(X_val) 
+        val_error = mean_squared_error(y_val, y_pred) 
+        if val_error < min_val_error: 
+            min_val_error = val_error
+            error_going_up = 0 
+        else:
+            error_going_up += 1
+            if error_going_up == 5:
+                break     
+
+
 ### >>> CH8 Dimensionality Reduction
 
 >>> 8.1 Main Approaches
@@ -76,11 +177,46 @@ https://github.com/ageron/handson-ml2
 
 >>> 8.3 Kernel PCA
 
-8.3
+8.3.1 KernelPCA (Good at processing cluters data)
 
-8.3
+    from sklearn.decomposition import KernelPCA
+    # different kernels
+    lin_pca = KernelPCA(n_components = 2, kernel="linear", fit_inverse_transform=True)
+    rbf_pca = KernelPCA(n_components = 2, kernel="rbf", gamma=0.0433, fit_inverse_transform=True)
+    sig_pca = KernelPCA(n_components = 2, kernel="sigmoid", gamma=0.001, coef0=1, fit_inverse_transform=True)
+    X_reduced = rbf_pca.fit_transform(X)
+    
+8.3.2 Selecting the Kernel
 
-8.3
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import Pipeline 
+    
+    # pipeline
+    clf = Pipeline([
+        ("kpca", KernelPCA(n_components = 2)), 
+        ("log_reg", LogisticRegression())
+    ])
+
+    # grid search
+    param_grid = [{
+        "kpca__gamma": np.linspace(0.03, 0.05, 10),
+        "kpca__kernel": ['rbf', 'sigmoid']
+    }]
+
+    # fit
+    grid_search = GridSearchCV(clf, param_grid, cv = 3)
+    grid_search.fit(X,y)    
+    
+    # check the best param 
+    print(grid_search.best_params_)
+
+8.3.3 Loally Linear Embedding (LLE)
+
+    from sklearn.manifold import LocallyLinearEmbedding 
+
+    lle = LocallyLinearEmbedding(n_components = 2, n_neighbors = 10) 
+    X_reduced = lle.fit_transform(X)
 
 ### >>> CH9 
 
