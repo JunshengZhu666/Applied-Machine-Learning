@@ -38,6 +38,94 @@ https://github.com/ageron/handson-ml2
 ### CH16. Natural Language Processing with RNNs and Attention
 
 ======
+### >>> CH3 Classification 
+
+>>> 3.1 Binary Classifier 
+
+3.1 Data preparation 
+
+     # split
+     X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
+     # shuffle 
+     import numpy as np 
+     shuffle_index  = np.random.permutation(60000) 
+     X_train, y_train = X_train[shuffle_index], y_train[shuffle_index]
+
+3.1 Performence Measurement
+
+     # cross validation
+     from sklearn.model_selection import cross_val_score
+     cross_val_score(sgd_clf, X_train, y_train_5, cv = 3, scoring = 'accuracy') 
+
+3.1 The baseline! (Especially for skewed datasets) 
+
+3.1 The Confusion Matrix 
+
+     # get prediction 
+     from sklearn.model_selection import cross_val_predict
+     y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+     
+     # get matrix 
+     from sklearn.metrics import confusion_matrix
+     
+3.1 Precision and Recall & F1
+
+     from sklearn.metrics import precision_score, recall_score
+     precision_score(y_train_5, y_train_pred)
+     recall_score(y_train_5, y_train_pred)
+     
+     # F1 
+     from sklearn.metrics import f1_score
+
+3.1 Decide on the threshold 
+
+     # set 'decision_function' method
+     y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3,
+method="decision_function")
+
+     # compute all threshold for the curve
+     from sklearn.metrics import precision_recall_curve 
+     precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
+     
+     # plot the curve
+     def plot_precision_recall_vs_threshold(precisions, recalls, thresholds):
+         plt.plot(thresholds, precisions[:-1], "b--", label="Precision", linewidth=2)
+         plt.plot(thresholds, recalls[:-1], "g-", label="Recall", linewidth=2)
+         plt.xlabel("Threshold", fontsize=16)
+         plt.legend(loc="upper left", fontsize=16)
+         plt.ylim([0, 1])
+
+     plt.figure(figsize=(8, 4))
+     plot_precision_recall_vs_threshold(precisions, recalls, thresholds)
+     plt.xlim([-70000, 70000])
+     save_fig("precision_recall_vs_threshold_plot")
+     plt.show()
+
+3.1 The ROC curve 
+
+     # roc_curve class 
+     from sklearn.metrics import roc_curve 
+     fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
+     
+     # plot using matplot 
+
+     def plot_roc_curve(fpr, tpr, label=None):
+         plt.plot(fpr, tpr, linewidth=2, label=label)
+         plt.plot([0, 1], [0, 1], 'k--')
+         plt.axis([0, 1, 0, 1])
+         plt.xlabel('False Positive Rate')
+         plt.ylabel('True Positive Rate')
+     plot_roc_curve(fpr, tpr)
+     plt.show()
+     
+     # auc areas
+     from sklearn.metrics import roc_auc_score 
+     roc_auc_score(y_train_5, y_scores)
+     
+>>> 3.2 Multiclass Classifier 
+
+3.2 Most algorithm handle it automatically 
+
 ### >>> CH4 Training Models
 
 >>> 4.1 Linear Regression
