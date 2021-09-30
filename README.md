@@ -38,6 +38,20 @@ https://github.com/ageron/handson-ml2
 ### CH16. Natural Language Processing with RNNs and Attention
 
 ======
+### >>> CH2 Regression 
+
+>>> 2.1 The big picture 
+
+>>> 2.2 Get the data 
+
+>>> 2.3 Visualize the data 
+
+>>> 2.4 Prepare the data 
+
+>>> 2.5 Selection and Training 
+
+>>> 2.6 Fine-tuning
+
 ### >>> CH3 Classification 
 
 >>> 3.1 Binary Classifier 
