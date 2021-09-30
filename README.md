@@ -38,6 +38,59 @@ https://github.com/ageron/handson-ml2
 ### CH16. Natural Language Processing with RNNs and Attention
 
 ======
+### >>> CH4 Training Models
+
+>>> 4.1 Linear Regression
+
+4.1 Normal eqution
+
+     # col 1
+     X_b = np.c_[np.ones((100, 1)), X]
+     # use numpy
+     theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
+
+4.1 LinearRegression()
+
+    from sklearn.linear_model import LinearRegression
+    # class 
+    lin_reg = LinearRegression()
+    # fit 
+    lin_reg.fit(X, y)
+    # param
+    lin_reg.intercept_, lin_reg.coef_
+    # prediction
+    X_new = np.array([[0], [2]])
+    lin_reg.predict(X_new)
+
+>>> 4.2 Gradient Descent
+
+4.2 Batch Gradient Descent
+
+4.2 Stochastic Gradient Descent
+    
+    # SCDRegressor
+    from sklearn.linear_model import SGDRegressor
+    # 50 epochs, util loss = 1e-3, no regularization, learning_rate start at 0.1
+    sgd_reg = SGDRegressor(max_iter=50, tol=1e-3, penalty=None, eta0=0.1,      random_state=42)
+    
+4.2
+
+>>> 4.3 Regularized Linear Models
+
+4.3
+
+4.3
+
+4.3
+
+>>> 4.4 Logistic Regression 
+
+4.4
+
+4.4
+
+4.4
+
 ### >>> CH5 Support Vector Machines
 
 >>> 5.1 Linear SVM Classification
