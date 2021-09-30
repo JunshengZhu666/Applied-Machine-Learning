@@ -71,25 +71,107 @@ https://github.com/ageron/handson-ml2
     # SCDRegressor
     from sklearn.linear_model import SGDRegressor
     # 50 epochs, util loss = 1e-3, no regularization, learning_rate start at 0.1
-    sgd_reg = SGDRegressor(max_iter=50, tol=1e-3, penalty=None, eta0=0.1,      random_state=42)
+    sgd_reg = SGDRegressor(max_iter=50, tol=1e-3, penalty=None, eta0=0.1, random_state=42)
     
-4.2
+4.2 Polynomial Regression 
+
+     # Add polynom to the feature 
+     from sklearn.preprocessing import PolynomialFeatures 
+     # It would try all the combinations of polynom terms
+     poly_features = PolynomialFeatures(degree = 2, include_bias = False) 
+     # Polynom term
+     X_poly = poly_features.fit_transform(X) 
+     # Feed to the linear reg now 
+     lin_reg = LinearRegression() 
+     lin_reg.fit(X_poly, y) 
+     
+4.2 Plot the learning curve 
+
+     from sklearn.metrics import mean_squared_error 
+     from sklearn.model_selection import train_test_split 
+     from matplotlib import pyplot as plt
+     
+     # plot_learning_curces functions
+     def plot_learning_curves(model, X, y):
+         X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=10)
+         train_errors, val_errors = [], []
+         for m in range(1, len(X_train)):
+             model.fit(X_train[:m], y_train[:m])
+             y_train_predict = model.predict(X_train[:m])
+             y_val_predict = model.predict(X_val)
+             train_errors.append(mean_squared_error(y_train[:m], y_train_predict))
+             val_errors.append(mean_squared_error(y_val, y_val_predict))
+
+         plt.plot(np.sqrt(train_errors), "r-+", linewidth=2, label="train")
+         plt.plot(np.sqrt(val_errors), "b-", linewidth=3, label="val")
+         plt.legend(loc="upper right", fontsize=14)   # not shown in the book
+         plt.xlabel("Training set size", fontsize=14) # not shown
+         plt.ylabel("RMSE", fontsize=14)              # not shown
+         
+    # plot 
+    lin_reg = LinearRegression() 
+    plot_learning_curves(lin_reg, X, y) 
+         
 
 >>> 4.3 Regularized Linear Models
 
-4.3
+4.3 Ridge 
 
-4.3
+     # increase alpha leads to flatten the model 
+     from sklearn.linear_model import Ridge 
+     ridge_reg = Ridge(alpha = 1, solver = 'cholesky') 
+     ridge_reg.fit(X,y) 
+     
+     # could also use SGD 
+     sgd_reg = SGDRegressor(penalty = 'l2') 
 
-4.3
+4.3 Lasso 
+
+     # Lasso 
+     from sklearn.linear_model import Lasso 
+     lasso_reg = Lasso(alpha = 1) 
+
+4.3 A mixed method
+     
+     # ElasticNet 
+     from sklearn.linear_model import ElasticNet
+     elastic_net = ElasticNet(alpha = 0.1, l1_ratio = 0.5)
+     
+4.3 Scale and plot 
+
+     # jupyter CH4
+     
+4.3 Early stopping 
+
+     # Early stopping with preset minimum_squared_error() 
+     from sklearn.base import clone
+     sgd_reg = SGDRegressor(max_iter=1, tol=-np.infty, warm_start=True, penalty=None,
+                            learning_rate="constant", eta0=0.0005, random_state=42)
+
+     minimum_val_error = float("inf")
+     best_epoch = None
+     best_model = None
+     for epoch in range(1000):
+         sgd_reg.fit(X_train_poly_scaled, y_train)  # continues where it left off
+         y_val_predict = sgd_reg.predict(X_val_poly_scaled)
+         val_error = mean_squared_error(y_val, y_val_predict)
+         if val_error < minimum_val_error:
+             minimum_val_error = val_error
+             best_epoch = epoch
+             best_model = clone(sgd_reg)
 
 >>> 4.4 Logistic Regression 
 
-4.4
+4.4 Normal 
 
-4.4
+     from sklearn.linear_model import LogisticRegression 
+     log_reg = LogisticRegression() 
 
-4.4
+4.4 Softmax
+
+     # multinomial logistic 
+     # use 'C' to tune the L2 regularization param
+     softmax_reg = LogisticRegression(multi_class = 'multinomial', solver = 'lbfgs', C = 10)
 
 ### >>> CH5 Support Vector Machines
 
