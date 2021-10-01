@@ -96,6 +96,16 @@ https://github.com/ageron/handson-ml2
 
 >>> 2.5 Selection and Training 
 
+2.5 Select and train 
+
+     # import
+
+2.5
+
+2.5
+
+2.5
+
 >>> 2.6 Fine-tuning
 
 ### >>> CH3 Classification 
