@@ -98,15 +98,62 @@ https://github.com/ageron/handson-ml2
 
 2.5 Select and train 
 
-     # import
+     # import the model
+     from sklearn.linear_model import LinearRegression 
+     # define the model
+     lin_reg = LinearRegression() 
+     # fit 
+     lin_reg.fit(housing_prepared, housing_labels)
+     # prdict 
+     lin_reg.predict(some_data_prepared)
+     
+2.5 MSE Measurement
 
-2.5
+     # mse
+     from sklearn.metrics import mean_squared_error 
+     lin_mse = mean_squared_error(housing_labels, housing_predictions) 
+     lin_rmse = np.sqrt(lin_mse) 
+     
+2.5 Cross Validation
 
-2.5
-
-2.5
+     # import cv class 
+     from sklearn.model_selection import cross_val_score
+     # define cv 
+     scores = cross_val_score(tree_reg, housing_prepared, housing_labels, 
+     scoring = "neg_mean_squared_error", cv = 10)
+     # sqrt 
+     tree_rmse_scores = np.sqrt(-scores)
+     # display the scores, mean and std() 
+     def display_scores(scores):
+         print("Scores:", scores)
+         print("Mean:", scores.mean())
+         print("Standard deviation:", scores.std())
 
 >>> 2.6 Fine-tuning
+
+2.6 Fine-tuning with GridSearch 
+
+     # import GridSearchCV 
+     from sklearn.model_selection import GridSearchCV 
+     
+     # set the grid 
+     param_grid = [
+         {'n_estimators': [3, 10, 30], 'max_features':[2, 4, 6, 8]}, 
+         {'bootstrap':[False], 'n_estimators':[3, 10], 'max_features':[2, 3, 4]}
+     ]
+     # model 
+     forest_reg = RandomForestRegressor() 
+     # use the prid 
+     grid_search = GridSearchCV(forest_reg, param_grid, cv = 5, scoring = 'neg_mean_squared_error')
+     # fit 
+     grid_search.fit(housing_prepared, housing_labels)
+     
+     # look at the best param
+     grid_search.best_estimator_
+     # look at the score 
+     cvres = grid_search.cv_results_
+     # feature importance 
+     feature_importances = grid_search.best_estimator_.feature_importances_
 
 ### >>> CH3 Classification 
 
