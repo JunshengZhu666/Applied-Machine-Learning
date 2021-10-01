@@ -46,7 +46,53 @@ https://github.com/ageron/handson-ml2
 
 >>> 2.3 Visualize the data 
 
+2.3 plot
+
+     # copy 
+     housing = strat_train_set.copy()
+     # geographical visualing
+     hosing.plot(kind = 'scatter', x = 'longitude', y = 'latitude')
+     # with density
+     housing.plot(kind = "scatter", x="longitude", y="latitude", alpha=0.1)
+     
 >>> 2.4 Prepare the data 
+
+2.4 split
+
+     # spliting with sklearn 
+     from sklearn.model_selection import train_test_split
+     train_set, test_set = train_test_split(housing, test_size = 0.2, random_state = 42)
+     
+     # StratifiedShuffleSplit 
+     from sklearn.model_selection import StratifiedShuffleSplit 
+
+2.4 correlation 
+
+     # Look at the correlation
+     # scatter plot
+     
+2.4 Missing data 
+     
+     # remove
+     # replace with median
+     # using sklearn imputer 
+     from sklearn.impute import SimpleImputer
+     imputer = SimpleImputer(strategy = "median")
+     imputer.fit(housing_num)
+     
+2.4 Encoding 
+
+     # LabelEncoder 
+     from sklearn.preprocessing import LabelEncoder 
+     # OneHotEncoder 
+     from sklearn.preprocessing import OneHotEncoder
+    
+2.5 Feature Scaling 
+
+     # max scaling
+     MinMaxScaler()
+     # standardization
+     StandardScaler()
 
 >>> 2.5 Selection and Training 
 
