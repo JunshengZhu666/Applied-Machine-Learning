@@ -53,8 +53,18 @@ Exercise6: SVM
 
 Exercise7: Clustering and PCA
 
+     1. K-means clustering
+     Random initialization and Local optima
+     2. PCA
+     Eigenvectors and reconstruction
+     3. PCA application
+     Compression and Visualization
+
 Exercise8: Anomaly Detection
 
+     1. Multivariate Gaussian Distribution
+     2. Moive Recommendation System
+     Collaborative filtering and Mean normalization
 
 # Deep Learning (From coursea, Andrew Ng)
 
