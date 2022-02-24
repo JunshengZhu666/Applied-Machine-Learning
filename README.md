@@ -1,6 +1,25 @@
 =======================================================
 =======================================================
-# Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2 edtion) (Example Done, Exercise doing)
+# Machine Learning (From coursea, Andrew Ng)
+
+https://www.coursera.org/learn/machine-learning
+
+https://github.com/khanhnamle1994/machine-learning/tree/master/Lectures
+
+https://github.com/dibgerge/ml-coursera-python-assignments
+
+# Deep Learning (From coursea, Andrew Ng)
+
+https://www.coursera.org/specializations/deep-learning
+
+https://github.com/Rustam-Z/deep-learning-notes
+
+https://github.com/GeeeekExplorer/AndrewNg-Deep-Learning
+
+
+=======================================================
+=======================================================
+# Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2 edtion) (Done)
 
 https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 
