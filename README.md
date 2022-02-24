@@ -74,9 +74,57 @@ https://github.com/Rustam-Z/deep-learning-notes
 
 https://github.com/GeeeekExplorer/AndrewNg-Deep-Learning
 
+### Course1: Deep learning 
 
+Exercise1: Neural Networks with Logistic Regression
 
+Exercise2: Planar data classification
 
+Exercise3: Building DNN
+
+Exercise4: DNN application
+
+### Course2: Imporving DNN 
+
+Exercise1: Gradient Checking, Initialization, Regularization
+
+Exercise2: Optimization 
+
+Exercise3: Tensorflow 
+
+### Course3: Structuring Machine Learning Project
+
+### Course4: Convolution Neural Networks 
+
+Exercise1: Building CNN step by step 
+
+Exercise2: CNN application 
+
+Exercise3: Keras tutorial
+
+Exercise4: Residual Network
+
+Exercise5: Car detection 
+
+Exercise6: Face recognization 
+
+Exercise7: Neural style transfer
+
+### Course5: Sequence models
+
+Exercise1: Building RNN step by step 
+
+Exercise2: Charater level model (Dinosaur Island)
+
+Exercise3: LSTM model (Jazz improvement)
+
+Exercise4: Word Vectors
+
+Exercise5: Emojify messages
+
+Exercise6: Neural Machine Translation with Attention
+
+Exercise7: Trigger word detection
 
 =======================================================
 =======================================================
