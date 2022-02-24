@@ -8,6 +8,54 @@ https://github.com/khanhnamle1994/machine-learning/tree/master/Lectures
 
 https://github.com/dibgerge/ml-coursera-python-assignments
 
+Exercise1: Linear Regression 
+
+     1. Cost function
+     J = (1/(2*m)) * np.sum(np.square(np.dot(X, theta) - y))
+     
+     2. Gradient descent
+     theta = theta - (alpha / m) * (np.dot(X, theta) - y).dot(X)
+          
+     3. Normal equation
+     theta = np.dot(np.dot(np.linalg.inv(np.dot(X.T, X)), X.T), y)
+
+Exercise2: Logistic Regression
+
+     1. Logit
+     2. Cost function 
+     3. Polynomial Feature mapping 
+     3. Regulaized cost function
+
+Exercise3: Multiclass Classification 
+
+     1. Vectorize Logistic Regression
+     2. One-vs-all Classification
+     3. Neural Networks Representation
+
+Exercise4: Neural Networks Learning
+
+     1. Cost function 
+     2. Backpropagation
+     3. Gredient Checking
+     4. Random initialization
+
+Exercise5: Regularization 
+
+     1. Bias and variance
+     2. Error analysis
+     > start with simple algorithm > plot learning curves > examine misprediction examples
+
+Exercise6: SVM 
+
+     1. Decision boundary of SVM
+     2. Gaussian Kernel
+     3. Application in Span clasiification
+
+Exercise7: Clustering and PCA
+
+Exercise8: Anomaly Detection
+
+
 # Deep Learning (From coursea, Andrew Ng)
 
 https://www.coursera.org/specializations/deep-learning
@@ -15,6 +63,9 @@ https://www.coursera.org/specializations/deep-learning
 https://github.com/Rustam-Z/deep-learning-notes
 
 https://github.com/GeeeekExplorer/AndrewNg-Deep-Learning
+
+
+
 
 
 =======================================================
