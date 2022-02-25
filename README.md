@@ -145,17 +145,35 @@ Exercise3: Tensorflow
 
 Exercise1: Building CNN step by step 
 
+     1. Convolute 
+     Padding(valid, same), Stride
+     2. Pooling 
+
 Exercise2: CNN application 
 
 Exercise3: Keras tutorial
 
 Exercise4: Residual Network
 
+     1. Tipical CNN structure
+     LetNet-5, AlexNet, VGG, ResNet, Inception
+     2. Residual block
+     More rubost in deep networks
+     3. Inception
+     Residual block, One*One Convolute layer
+
 Exercise5: Car detection 
+
+     1. YOLO
+     IoU, non-max suppression
 
 Exercise6: Face recognization 
 
+     1. Training with triplet loss
+
 Exercise7: Neural style transfer
+
+     1. Content loss, Style loss(Gram matrix)
 
 ### Course5: Sequence models
 
