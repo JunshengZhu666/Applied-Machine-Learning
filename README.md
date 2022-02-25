@@ -1,23 +1,29 @@
-<a name="custom_anchor_name"></a>
 
 =======================================================
 =======================================================
 
-# CONTENT
+### CONTENT
 
-# 1. Machine Learning and Deep Learning (Lectures and exercises from coursea, Andrew Ng)
+### 1. Machine Learning and Deep Learning (Lectures and exercises from coursea, Andrew Ng)
 
-# 2. Hands-On Machine Learning with scikit-learn, keras and Tensorflow (Book and code example, 2 edtion)
+[click here to jump to my anchor](#1.)
 
-# 3. An introduction to Statitical Learning with Application in R (Book and exercises, 1 edition)
+### 2. Hands-On Machine Learning with scikit-learn, keras and Tensorflow (Book and code example, 2 edtion)
 
-# 4. Applied-Machine-Learning (Course COMP551, McGill University)
+[click here to jump to my anchor](#2.)
+
+### 3. An introduction to Statitical Learning with Application in R (Book and exercises, 1 edition)
+
+[click here to jump to my anchor](#3.)
+
+### 4. Applied-Machine-Learning (Course COMP551, McGill University)
+
+[click here to jump to my anchor](#4.)
 
 =======================================================
 =======================================================
 
-[click here to jump to my anchor](#custom_anchor_name)
-
+<a name="1."></a>
 # Machine Learning (From coursea, Andrew Ng)
 
 https://www.coursera.org/learn/machine-learning
@@ -173,6 +179,8 @@ Exercise7: Trigger word detection
 
 =======================================================
 =======================================================
+
+<a name="2."></a>
 # Hands-On Machine Learning with scikit-learn, keras and Tensorflow (2 edtion) (Done)
 
 https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
@@ -1065,8 +1073,6 @@ method="decision_function")
 
 >>> 12.3 TF Functions and Graphs
 
-
-
 ### CH13 >>> Loading and Precessing Dara with TensorFlow 
 
 >>> 13.1 The Data API
@@ -1262,8 +1268,6 @@ method="decision_function")
         activation="relu", dilation_rate=rate))
     model.add(keras.layers.Conv1D(filters=10, kernel_size=1))
     
-
-
 ### >>> CH16 NLP with RNNs and Attention
 
 >>> 16.1 Character RNN 
@@ -1353,11 +1357,10 @@ method="decision_function")
 16.4.3 Multi-head attention
 
 
-
-
-
 =======================================================
 =======================================================
+
+<a name="3."></a>
 # An introduction to Statitical Learning with Application in R (1 edition) (Exercise done with R)
 
 1, The Book
@@ -1395,7 +1398,9 @@ https://blog.princehonest.com/stat-learning/
 
 =======================================================
 =======================================================
-# Applied-Machine-Learning- (Lecture Done)
+
+<a name="4."></a>
+# Applied-Machine-Learning
 
 COMP551 - Prof. Joelle Pineau 
 
