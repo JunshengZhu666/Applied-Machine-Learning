@@ -170,13 +170,25 @@ Exercise1: Building RNN step by step
 
 Exercise2: Charater level model (Dinosaur Island)
 
+     1. Gradient cliping
+
 Exercise3: LSTM model (Jazz improvement)
 
 Exercise4: Word Vectors
 
+     1. Learning word embedding
+     Word2Vec, Glove
+     2. Application
+     Word analogy, De-bias, Embedding layer
+
 Exercise5: Emojify messages
 
 Exercise6: Neural Machine Translation with Attention
+
+     1. Beam search
+     2. Machine translation evaluation
+     BLEU score
+     3. Attention model
 
 Exercise7: Trigger word detection
 
