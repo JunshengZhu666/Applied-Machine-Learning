@@ -93,11 +93,31 @@ Exercise4: DNN application
 
 ### Course2: Imporving DNN 
 
-Exercise1: Gradient Checking, Initialization, Regularization
+Exercise1: Initialization, Regularization, Gradient Checking
+
+     1. Initialization
+     Normalization, Random Initialization, He initialization, Xavier initialization
+     2. Regularization
+     L1 & L2 regularization, Dropout(Create mask matrix with prob, Multiple with activation, Scale back with prob)
+     3. Gradient Checking
 
 Exercise2: Optimization 
 
+     1. Mini-batch
+     Batch gradient(batch=m), Stochastic gradient(batch=1), Mini-batch gradient(batch=64, 128... when m>2000)
+     2. Momentum
+     Exponentially weighted averages gradient descent
+     3. Variations of momentum 
+     RMS prop, Adam
+     4. Learning rate decay
+
 Exercise3: Tensorflow 
+
+     1. Batch normalization
+     Before activation, for regularization and normalization
+     2. Multiclass classification output
+     Softmax regression
+     3. Tensorflow 1.0 tutorial
 
 ### Course3: Structuring Machine Learning Project
 
