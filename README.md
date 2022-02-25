@@ -165,7 +165,8 @@ Exercise7: Neural style transfer
 
 Exercise1: Building RNN step by step 
 
-     1. 
+     1. The structures of units
+     RNN, GRU, LSTM 
 
 Exercise2: Charater level model (Dinosaur Island)
 
