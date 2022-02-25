@@ -78,9 +78,16 @@ https://github.com/GeeeekExplorer/AndrewNg-Deep-Learning
 
 Exercise1: Neural Networks with Logistic Regression
 
-Exercise2: Planar data classification
+     1. Cost function and gradient descent 
+
+Exercise2: Planar data classification with one hidden layer
+
+     2. Plot the decision boundry for inspection
 
 Exercise3: Building DNN
+
+     1. Activation functions and their gradient (sigmoid, tanh, relu)
+     2. Building L-lay neural networks with for loop
 
 Exercise4: DNN application
 
