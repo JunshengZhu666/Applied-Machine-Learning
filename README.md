@@ -165,6 +165,8 @@ Exercise7: Neural style transfer
 
 Exercise1: Building RNN step by step 
 
+     1. 
+
 Exercise2: Charater level model (Dinosaur Island)
 
 Exercise3: LSTM model (Jazz improvement)
