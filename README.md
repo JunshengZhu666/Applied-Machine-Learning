@@ -1,5 +1,23 @@
+<a name="custom_anchor_name"></a>
+
 =======================================================
 =======================================================
+
+# CONTENT
+
+# 1. Machine Learning and Deep Learning (Lectures and exercises from coursea, Andrew Ng)
+
+# 2. Hands-On Machine Learning with scikit-learn, keras and Tensorflow (Book and code example, 2 edtion)
+
+# 3. An introduction to Statitical Learning with Application in R (Book and exercises, 1 edition)
+
+# 4. Applied-Machine-Learning (Course COMP551, McGill University)
+
+=======================================================
+=======================================================
+
+[click here to jump to my anchor](#custom_anchor_name)
+
 # Machine Learning (From coursea, Andrew Ng)
 
 https://www.coursera.org/learn/machine-learning
