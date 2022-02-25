@@ -35,13 +35,9 @@ https://github.com/dibgerge/ml-coursera-python-assignments
 Exercise1: Linear Regression 
 
      1. Cost function
-     J = (1/(2*m)) * np.sum(np.square(np.dot(X, theta) - y))
-     
      2. Gradient descent
-     theta = theta - (alpha / m) * (np.dot(X, theta) - y).dot(X)
-          
      3. Normal equation
-     theta = np.dot(np.dot(np.linalg.inv(np.dot(X.T, X)), X.T), y)
+
 
 Exercise2: Logistic Regression
 
@@ -1419,7 +1415,7 @@ https://blog.princehonest.com/stat-learning/
 
 COMP551 - Prof. Joelle Pineau 
 
-From https://github.com/Pulkit-Khandelwal/COMP551-Applied-Machine-Learning
+From https://www.cs.mcgill.ca/~jpineau/comp551/schedule.html
 
 Course Skeleton 
 
