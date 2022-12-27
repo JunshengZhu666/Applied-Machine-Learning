@@ -1431,6 +1431,9 @@ https://blog.princehonest.com/stat-learning/
 <a name="4."></a>
 # Applied-Machine-Learning
 
+(Update on 2022-12-27 Prof. Li Yue https://www.cs.mcgill.ca/~yueli/teaching/COMP551_Fall2022/comp551_syllabus.html
+with more emphasis on state-of-the-art deep learning models)
+
 COMP551 - Prof. Joelle Pineau 
 
 From https://www.cs.mcgill.ca/~jpineau/comp551/schedule.html
